@@ -215,7 +215,7 @@ export class OpenAPISpec {
       console.warn(
         `Attempting to load a Swagger ${swaggerVersion} spec. ${warningMessage}`
       );
-    } else {
+    } else if (swaggerVersion === undefined && openAPIVersion === undefined){
       throw new Error(
         `Attempting to load an unsupported spec:\n\n${JSON.stringify(
           document,
